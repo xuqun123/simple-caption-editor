@@ -4,7 +4,10 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
-#include <QVideoWidget>
+#include <QtCharts/QChart>
+#include <QtCharts/QLineSeries>
+#include <QAudioInput>
+#include "xyseriesiodevice.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,7 +25,10 @@ private:
     Ui::MainWindow *ui;
     QMediaPlayer *m_player = nullptr;
     QMediaPlaylist *m_playlist = nullptr;
-    QVideoWidget *m_videoWidget = nullptr;
 
+    XYSeriesIODevice *m_device = nullptr;
+    QtCharts::QChart *m_chart = nullptr;
+    QtCharts::QLineSeries *m_series = nullptr;
+    QAudioInput *m_audioInput = nullptr;
 };
 #endif // MAINWINDOW_H
