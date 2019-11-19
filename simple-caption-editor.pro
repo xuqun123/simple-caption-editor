@@ -18,10 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    videoplayer.cpp \
     xyseriesiodevice.cpp
 
 HEADERS += \
     mainwindow.h \
+    videoplayer.h \
     xyseriesiodevice.h
 
 FORMS += \

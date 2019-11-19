@@ -5,6 +5,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "videoplayer.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,13 +13,20 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
+    ui->playerWidget->setLoadMediaAction(ui->actionLoad_Media);
 
     //video player
-    m_player = new QMediaPlayer;
-    m_player->setVideoOutput(ui->playerWidget);
-    m_player->setMedia(QUrl::fromLocalFile("/Users/quintin/Developer/simple-caption-editor/test_video.mov"));
-    m_player->play();
-    m_player->setVolume(10);
+//    m_player = new QMediaPlayer;
+//    m_player->setVideoOutput(ui->playerWidget);
+//    m_player->setMedia(QUrl::fromLocalFile("/Users/quintin/Developer/simple-caption-editor/test_video.mov"));
+//    m_player->play();
+//    m_player->setVolume(10);
+//    VideoPlayer player;
+//     const QRect availableGeometry = QApplication::desktop()->availableGeometry(&player);
+//         player.resize(availableGeometry.width() / 6, availableGeometry.height() / 4);
+//     ui->mediaLayout->addWidget(player);
+//    const QRect availableGeometry = QApplication::desktop()->availableGeometry(ui->playerWidget);
+//    ui->playerWidget->resize(availableGeometry.width() / 6, availableGeometry.height() / 4);
 
     //audio soundwave
     m_series = new QtCharts::QLineSeries;
